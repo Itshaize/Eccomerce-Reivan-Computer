@@ -1,0 +1,156 @@
+@charset "UTF-8";
+
+/* --- Variables Globales --- */
+:root {
+  --primary-color: #b142f5;
+  --dark-bg: #1e293b;
+  --text-main: #334155;
+  --bg-light: #f8fafc;
+  --white: #ffffff;
+  --shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+}
+
+/* --- Estilos Base --- */
+body {
+  font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+  background-color: var(--bg-light);
+  color: var(--text-main);
+}
+
+/* --- Cabecera y Logo --- */
+header {
+  background-color: var(--dark-bg);
+  color: var(--white);
+  padding: 2rem 1rem;
+  text-align: center;
+  box-shadow: var(--shadow);
+}
+
+header h1 {
+  margin: 0;
+  font-size: 2rem;
+  letter-spacing: -0.025em;
+}
+
+.logo-container img {
+  width: 150px;
+  height: auto;
+  margin-bottom: 15px;
+}
+
+/* --- Barra de Navegación --- */
+nav {
+  background: var(--white);
+  padding: 1rem;
+  text-align: center;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+nav a {
+  text-decoration: none;
+  color: var(--text-main);
+  margin: 0 15px;
+  font-weight: 600;
+  transition: color 0.3s;
+}
+
+nav a:hover,
+nav a.active {
+  color: var(--primary-color);
+}
+
+/* --- Estructura Principal --- */
+main {
+  max-width: 1000px;
+  margin: 40px auto;
+  padding: 20px;
+  background: var(--white);
+  border-radius: 12px;
+  box-shadow: var(--shadow);
+}
+
+.content {
+  display: flex;
+  gap: 30px;
+  align-items: start;
+}
+
+section {
+  flex: 2;
+}
+
+aside {
+  flex: 1;
+  background: #f1f5f9;
+  padding: 20px;
+  border-radius: 8px;
+  font-size: 0.9rem;
+}
+
+article {
+  margin-bottom: 30px;
+  text-align: left;
+}
+
+article img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin-top: 15px;
+}
+
+/* --- Redes Sociales (Aside) --- */
+.social-link {
+  text-decoration: none;
+  color: #0a66c2;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.social-link img {
+  width: 30px;
+}
+
+/* --- Pie de Página (Footer) --- */
+footer {
+  background-color: var(--dark-bg);
+  color: #94a3b8;
+  text-align: center;
+  padding: 2rem 1rem;
+  margin-top: 50px;
+}
+
+footer li {
+  list-style: none;
+  display: inline-block;
+  padding: 0 15px;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.footer-socials {
+  margin-bottom: 15px;
+}
+
+.footer-socials img {
+  width: 35px;
+  margin: 0 15px;
+}
+
+/* --- Diseño Responsivo (Móviles) --- */
+@media (max-width: 768px) {
+  .content {
+    flex-direction: column;
+  }
+
+  main {
+    margin: 10px;
+    padding: 15px;
+  }
+}
