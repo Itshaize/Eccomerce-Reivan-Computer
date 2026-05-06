@@ -24,6 +24,7 @@
 
     <nav>
         <a class="active" href="index.jsp">Inicio</a>
+        <a href="productos.jsp">Productos</a>
         <a href="construccion.jsp">Servicios</a>
         <a href="construccion.jsp">Contacto</a>
         <a href="login.jsp">Iniciar Sesión</a>
