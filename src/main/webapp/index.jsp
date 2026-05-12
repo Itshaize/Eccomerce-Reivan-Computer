@@ -32,7 +32,7 @@
 
     <main>
         <div class="content">
-            <section>
+            <section> 
                 <article>
                     <h3>Nuestra misión</h3>
                     <p>Esta empresa tiene 12 años de experiencia. Buscamos integrar más el hardware a tu vida,
@@ -71,6 +71,7 @@
                 </a>
             </aside>
         </div>
+        <div class="sketchfab-embed-wrapper"> <iframe title="Weighted Sphere - Portal (Rtx)" frameborder="0" allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true" allow="autoplay; fullscreen; xr-spatial-tracking" xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share src="https://sketchfab.com/models/256ad69691f24311ba834e3ef3f2aede/embed"> </iframe> <p style="font-size: 13px; font-weight: normal; margin: 5px; color: #4A4A4A;"> <a href="https://sketchfab.com/3d-models/weighted-sphere-portal-rtx-256ad69691f24311ba834e3ef3f2aede?utm_medium=embed&utm_campaign=share-popup&utm_content=256ad69691f24311ba834e3ef3f2aede" target="_blank" rel="nofollow" style="font-weight: bold; color: #1CAAD9;"> Weighted Sphere - Portal (Rtx) </a> by <a href="https://sketchfab.com/Biciboy2014?utm_medium=embed&utm_campaign=share-popup&utm_content=256ad69691f24311ba834e3ef3f2aede" target="_blank" rel="nofollow" style="font-weight: bold; color: #1CAAD9;"> Kostr </a> on <a href="https://sketchfab.com?utm_medium=embed&utm_campaign=share-popup&utm_content=256ad69691f24311ba834e3ef3f2aede" target="_blank" rel="nofollow" style="font-weight: bold; color: #1CAAD9;">Sketchfab</a></p></div>
     </main>
 
     <footer>
