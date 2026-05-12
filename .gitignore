@@ -1,1 +1,4 @@
 tomcat.zip
+# Ignorar modelos 3D pesados
+src/main/webapp/modelos3d/*.glb
+*.glb

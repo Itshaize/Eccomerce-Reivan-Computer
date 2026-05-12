@@ -22,8 +22,9 @@
 
     <nav>
         <a href="index.jsp">Inicio</a>
-        <a href="construccion.jsp">Servicios</a>
-        <a href="construccion.jsp">Contacto</a>
+        <a href="productos.jsp">Productos</a>
+        <a href="servicios.jsp">Servicios</a>
+        <a href="contacto.jsp">Contacto</a>
         <a class="active" href="login.jsp">Iniciar Sesión</a>
     </nav>
 
@@ -55,12 +56,13 @@
     </main>
 
     <footer>
-        <div class="footer-socials">
-            <a href="https://facebook.com/reivan" target="_blank"><img src="imagenes/facebook.svg" alt="Facebook"></a>
-            <a href="https://www.instagram.com/leonard.studios/" target="_blank"><img src="imagenes/instagram.svg" alt="Instagram"></a>
-            <a href="https://www.tiktok.com/@itshaiz_" target="_blank"><img src="imagenes/tiktok.svg" alt="TikTok"></a>
-        </div>
+        <ul>
+            <li><a href="https://facebook.com/reivan" target="_blank"><img src="icons/facebook.svg" alt="Facebook"></a></li>
+            <li><a href="https://www.instagram.com/leonard.studios/" target="_blank"><img src="icons/instagram.svg" alt="Instagram"></a></li>
+            <li><a href="https://www.tiktok.com/@itshaiz_" target="_blank"><img src="icons/tiktok.svg" alt="TikTok"></a></li>
+        </ul>
         <p>&copy; 2026 Ismael Cornejo</p>
+        <p style="font-size: 0.85em; color: #94a3b8; margin-top: 5px;">Última actualización: 11 de Mayo de 2026</p>
     </footer>
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>

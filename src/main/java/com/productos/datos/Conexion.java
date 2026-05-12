@@ -7,7 +7,7 @@ import java.sql.SQLException;
 public class Conexion {
 
     private Connection conexion;
-    private final String url = "jdbc:postgresql://localhost:5432/tu_base_de_datos"; // Cambia 'tu_base_de_datos'
+    private final String url = "jdbc:postgresql://localhost:5432/reivan_bd"; 
     private final String usuario = "postgres"; // Cambia tu usuario si es distinto
     private final String clave = "Martin29052022"; // Cambia tu contraseña
 

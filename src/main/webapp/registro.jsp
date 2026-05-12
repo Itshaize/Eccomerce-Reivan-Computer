@@ -24,8 +24,9 @@
 
     <nav>
         <a href="index.jsp">Inicio</a>
-        <a href="construccion.jsp">Servicios</a>
-        <a href="construccion.jsp">Contacto</a>
+        <a href="productos.jsp">Productos</a>
+        <a href="servicios.jsp">Servicios</a>
+        <a href="contacto.jsp">Contacto</a>
         <a href="login.jsp">Iniciar Sesión</a>
     </nav>
 
@@ -45,6 +46,7 @@
                         <div class="form-group col-md-6 text-left">
                             <label for="txtCedula" style="font-weight: bold; color: var(--text-main);">Cédula</label>
                             <input type="text" class="form-control" id="txtCedula" name="txtCedula" placeholder="Ej: 1712345678" required maxlength="10" pattern="\d{10}" title="Debe contener 10 dígitos">
+                            <small id="provinciaDetectada" class="form-text text-primary" style="font-weight: bold;"></small>
                             <small class="form-text text-muted">Debe tener exactamente 10 números.</small>
                         </div>
                     </div>
@@ -58,11 +60,11 @@
                             <label for="cmbEstado" style="font-weight: bold; color: var(--text-main);">Estado Civil</label>
                             <select id="cmbEstado" name="cmbEstado" class="form-control" required>
                                 <option value="" disabled selected>Seleccione su estado...</option>
-                                <option value="Soltero/a">Soltero/a</option>
-                                <option value="Casado/a">Casado/a</option>
-                                <option value="Divorciado/a">Divorciado/a</option>
-                                <option value="Viudo/a">Viudo/a</option>
-                                <option value="Unión Libre">Unión Libre</option>
+                                <option value="1">Soltero/a</option>
+                                <option value="2">Casado/a</option>
+                                <option value="3">Divorciado/a</option>
+                                <option value="4">Viudo/a</option>
+                                <option value="5">Unión Libre</option>
                             </select>
                         </div>
                     </div>
@@ -108,6 +110,18 @@
                         </div>
                     </div>
 
+                    <div class="form-row">
+                        <div class="form-group col-md-6 text-left">
+                            <label for="txtEmail" style="font-weight: bold; color: var(--text-main);">Correo Electrónico</label>
+                            <input type="email" class="form-control" id="txtEmail" name="txtEmail" placeholder="usuario@ejemplo.com" required>
+                        </div>
+                        <div class="form-group col-md-6 text-left">
+                            <label for="txtClave" style="font-weight: bold; color: var(--text-main);">Contraseña</label>
+                            <input type="password" class="form-control" id="txtClave" name="txtClave" minlength="6" required>
+                            <small class="form-text text-muted">Mínimo 6 caracteres.</small>
+                        </div>
+                    </div>
+
                     <div class="mt-4">
                         <button type="submit" id="btnSubmit" class="btn text-white w-100 mb-2" style="background-color: var(--primary-color); font-weight: bold; border: none; padding: 12px; font-size: 1.1em;">
                             <span id="btnText">Completar Registro</span>
@@ -121,12 +135,13 @@
     </main>
 
     <footer>
-        <div class="footer-socials">
-            <a href="https://facebook.com/reivan" target="_blank"><img src="imagenes/facebook.svg" alt="Facebook"></a>
-            <a href="https://www.instagram.com/leonard.studios/" target="_blank"><img src="imagenes/instagram.svg" alt="Instagram"></a>
-            <a href="https://www.tiktok.com/@itshaiz_" target="_blank"><img src="imagenes/tiktok.svg" alt="TikTok"></a>
-        </div>
+        <ul>
+            <li><a href="https://facebook.com/reivan" target="_blank"><img src="icons/facebook.svg" alt="Facebook"></a></li>
+            <li><a href="https://www.instagram.com/leonard.studios/" target="_blank"><img src="icons/instagram.svg" alt="Instagram"></a></li>
+            <li><a href="https://www.tiktok.com/@itshaiz_" target="_blank"><img src="icons/tiktok.svg" alt="TikTok"></a></li>
+        </ul>
         <p>&copy; 2026 Ismael Cornejo</p>
+        <p style="font-size: 0.85em; color: #94a3b8; margin-top: 5px;">Última actualización: 11 de Mayo de 2026</p>
     </footer>
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
@@ -144,11 +159,40 @@
             });
 
             // Efecto de carga al enviar
-            $('#formRegistro').on('submit', function() {
+            $('#formRegistro').on('submit', function(e) {
+                if (!this.checkValidity()) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    return;
+                }
                 $('#btnText').hide();
                 $('#btnLoader').show();
                 $('#btnSubmit').css('pointer-events', 'none');
                 $('#btnSubmit').css('opacity', '0.7');
+            });
+
+            // Lógica de detección de provincia
+            const provincias = {
+                "01": "Azuay", "02": "Bolívar", "03": "Cañar", "04": "Carchi", "05": "Cotopaxi",
+                "06": "Chimborazo", "07": "El Oro", "08": "Esmeraldas", "09": "Guayas", "10": "Imbabura",
+                "11": "Loja", "12": "Los Ríos", "13": "Manabí", "14": "Morona Santiago", "15": "Napo",
+                "16": "Pastaza", "17": "Pichincha", "18": "Tungurahua", "19": "Zamora Chinchipe", "20": "Galápagos",
+                "21": "Sucumbíos", "22": "Orellana", "23": "Santo Domingo de los Tsáchilas", "24": "Santa Elena",
+                "30": "Exterior"
+            };
+
+            $('#txtCedula').on('input', function() {
+                const val = $(this).val();
+                if (val.length >= 2) {
+                    const cod = val.substring(0, 2);
+                    if (provincias[cod]) {
+                        $('#provinciaDetectada').text('Provincia: ' + provincias[cod]);
+                    } else {
+                        $('#provinciaDetectada').text('Código de provincia no válido').removeClass('text-primary').addClass('text-danger');
+                    }
+                } else {
+                    $('#provinciaDetectada').text('').removeClass('text-danger').addClass('text-primary');
+                }
             });
         });
     </script>
